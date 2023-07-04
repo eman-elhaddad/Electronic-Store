@@ -1,0 +1,308 @@
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* Start header */
+.header {
+    height: 70px;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.header .container .logo img {
+    width: 70px;
+    margin-top: -20px;
+}
+
+.header .container .links ul {
+    display: flex;
+    list-style: none;
+}
+
+.header .container .links ul li {
+    padding: 0 20px;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.header .container .links ul li a {
+    color: black;
+    transition: .2s;
+}
+
+.header .container .links ul li a:hover {
+    border-bottom: 2px solid black;
+    letter-spacing: 1.3px;
+}
+
+
+/* End header */
+/* Start home page */
+.home {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: calc(100vh - 140px);
+    margin-bottom: 70px;
+}
+
+.home {
+    padding: 0;
+    background: url("Images/happy-dark-skinned-woman-wears-wired-headphones-enjoys-nice-music-looks-away-has-toothy-smile.jpg");
+    background-size: cover;
+}
+
+.home .intro h1 {
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.home .intro p {
+    font-size: 22px;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+}
+
+.home .intro .code {
+    text-transform: capitalize;
+    border: 2px dashed black;
+    width: fit-content;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.home .intro .code:hover {
+    background-color: black;
+    color: white;
+}
+
+/* End home page */
+/* Start Cooming Soon page */
+.gallery {
+    border-top: 3px solid rgb(237 188 57);
+    padding: 70px 0;
+    border-bottom: 3px solid rgb(237 188 57);
+}
+
+.specialHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.specialHeader h3 {
+    padding: 25px 5px;
+    font-size: 50px;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    width: fit-content;
+}
+
+.circle {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(237 188 57);
+    border-radius: 50%;
+}
+
+.gallery .container {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery .imgbox {
+    width: calc(98% /3);
+    position: relative;
+}
+
+.gallery img {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 10px;
+}
+
+.gallery .container .imgbox::before {
+    position: absolute;
+    content: "🤍";
+    font-size: 20px;
+    z-index: 20;
+    margin-left: 5px;
+}
+
+.gallery .container .imgbox:hover:before {
+    content: "💛";
+}
+
+.gallery .container .imgbox::after {
+    position: absolute;
+    content: "Add To Cart";
+    width: 85px;
+    height: 20px;
+    background-color: rgb(247 208 100 / 77%);
+    z-index: 4;
+    bottom: 190px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    opacity: 0;
+}
+
+.gallery .container .imgbox:hover:after {
+    opacity: 1;
+}
+
+/* End Cooming Soon page */
+/* Start Trindig Products page */
+.best {
+    padding: 70px 0;
+    border-bottom: 3px solid rgb(237 188 57);
+}
+
+.best .bigbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.best .imgbox {
+    margin: 0 30px 20px;
+    position: relative;
+}
+
+.best .imgbox::after {
+    position: absolute;
+    content: "Add To Cart";
+    width: 85px;
+    height: 20px;
+    background-color: rgb(247, 208, 100);
+    z-index: 4;
+    bottom: 0;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    transform: translate(-50%);
+}
+
+.best .imgbox:hover::after {
+    background-color: black;
+    color: white;
+}
+
+
+.best .bigbox img {
+    width: 170px;
+    box-shadow: 2px -2px 10px -2px rgba(99, 99, 99, 0.2);
+
+}
+
+.best .imgbox>span {
+    font-size: 15px;
+    font-weight: bold;
+    color: #0a7ef0;
+}
+
+.best .imgbox .price {
+    margin-bottom: 40px;
+}
+
+.best .imgbox .price .currency {
+    font-size: 13px;
+    color: #FF9800;
+}
+
+.best .imgbox .price .money {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* End Trindig Products page */
+/* Start contact page */
+iframe {
+    width: 100%;
+    height: 40vh;
+}
+
+.contact {
+    border-top: 3px solid rgb(237 188 57);
+    font-weight: bold;
+    color: rgb(247, 208, 100);
+    color: black;
+    height: 25vh;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact img {
+    width: 80px;
+}
+
+.contact a {
+    color: black;
+    margin-right: 15px;
+}
+
+.contact a:hover {
+    color: rgb(247, 208, 100);
+}
+
+/* End contact page */
